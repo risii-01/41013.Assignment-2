@@ -1,3 +1,5 @@
+%% This is just code a practice code from Lab Assignment 1 to help us understand and get things running
+
 r = LinearUR3
 
 

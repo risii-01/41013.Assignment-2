@@ -1,8 +1,6 @@
-%% This is just code a practice code from Lab Assignment 1 to help us understand and get things running
+%% This is just a practice code from Lab Assignment 1 to help us understand and get things running
 
-r = LinearUR3
-
-
+r = LinearUR3;
 
 %% pick up brick
 hold on
@@ -24,8 +22,8 @@ end
 q3 = q2;
 % q2 = r.model.qlim(:,2)' 
 T3 = transl(0.3,0.3,0.1)*trotx(pi/2);    %find a new pos                                               % Define a translation matrix            
-q4 = r.model.ikcon(T3) % try to add initial guess
-% q4 = r.model.ikcon(T3, 'q0', q3) % try to add initial guess
+q4 = r.model.ikcon(T3)     % try to add initial guess
+% q4 = r.model.ikcon(T3, 'q0', q3)     % try to add initial guess
 qPath = jtraj(q3,q4,50);
 
 for i = 1:length(qPath)

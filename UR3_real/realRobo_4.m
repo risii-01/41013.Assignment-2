@@ -1,3 +1,5 @@
+% code for using the UR3 using joint angles to pick up a book and place it on a shelf
+
 %% from starting to target
 rosshutdown;
 

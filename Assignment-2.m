@@ -66,7 +66,7 @@ pause(2);
 % Define the initial and final joint angles for the LinearUR3
 q1 = zeros(1,8);
 
-% Define the transform of the book (T2) and use ikine to determine the joint angles needed for that transform
+% Define the transform of the book (T2) and use ikcon to determine the joint angles needed for that transform
 T2 = transl(-0.5, -1.5, 0.845) * trotx(pi/2) * troty(pi/90) * trotz(pi/80);
 q2 = r.model.ikcon(T2);
 

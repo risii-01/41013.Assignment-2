@@ -10,7 +10,6 @@ h = surf([-2,-2;2,2] ...
 ,'CData',imread('bedwall.jpg') ...
 ,'FaceColor','texturemap');
 
-
 hold on;
 
 h2 = surf([2,2;2,2] ...
@@ -43,7 +42,6 @@ light('Position', [0, 0, -5], 'Style', 'local', 'Color', [1 1 1]);
 lighting gouraud; % Use Gouraud shading for smooth appearance
 
 
-
 table = PlaceObject('newtable2.ply',[-0.5,-1,0]);
 shelf = PlaceObject('newshelf9.ply',[0.85,-2,0]);
 button = PlaceObject('ebutton4.ply',[-1.2,-1.5,0.835]);
@@ -67,8 +65,8 @@ pause(2);
 
 % Define the initial and final joint angles for the LinearUR3
 q1 = zeros(1,8);
-% q1 = r.model.qlim(:,1)';
 
+% Define the transform of the book (T2) and use ikine to determine the joint angles needed for that transform
 T2 = transl(-0.5, -1.5, 0.845) * trotx(pi/2) * troty(pi/90) * trotz(pi/80);
 q2 = r.model.ikcon(T2);
 
@@ -110,7 +108,6 @@ for i = 1:length(qMatrix)
     drawnow();
     pause(0)
 end
-
 
 
 
